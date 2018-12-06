@@ -28,14 +28,16 @@ public:
 		while(true) {
 			struct sockaddr_in servaddr;
 
-			std::cout << "Enter reqest: ";
-			std::string request;// = "tcpdum11p tc2 p po3rt 450";
+			std::cout << "Enter reqest(exit to quit program): ";
+			std::string request;
 			std::getline(std::cin, request);
 
 			if(request.length() > _maxMessageLenght) {
 				request = request.substr(0, _maxMessageLenght);
 			}
-
+			if(request == "exit") {
+				break;
+			}
 			bytesSent = sendto(
 				_socketFD,
 				request.c_str(),

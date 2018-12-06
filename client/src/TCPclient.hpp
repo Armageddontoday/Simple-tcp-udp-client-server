@@ -38,7 +38,9 @@ public:
 			if(request.length() > _maxMessageLenght) {
 				request = request.substr(0, _maxMessageLenght);
 			}
-
+			if(request == "exit") {
+				break;
+			}
 			bytesSent = write(_socketFD, request.c_str(), request.length() + 1);
 			if (bytesSent < 0) {
 				std::cerr << "Packet sending error!" << std::endl;
