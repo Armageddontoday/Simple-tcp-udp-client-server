@@ -42,6 +42,7 @@ public:
 			bytesSent = write(_socketFD, request.c_str(), request.length() + 1);
 			if (bytesSent < 0) {
 				std::cerr << "Packet sending error!" << std::endl;
+				continue;
 			}
 
 			request.clear();

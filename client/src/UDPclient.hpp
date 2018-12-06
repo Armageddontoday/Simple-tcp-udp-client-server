@@ -47,6 +47,7 @@ public:
 		
 			if (bytesSent < 0) {
 				std::cerr << "Packet sending error!" << std::endl;
+				continue;
 			}
 
 			std::cout << "try to read" << std::endl;

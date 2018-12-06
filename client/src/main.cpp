@@ -17,7 +17,7 @@ void PrintHelp() {
 int main(int argc, char *argv[]) {
 	if(argc != 4) {
 		PrintHelp();
-		return 0;
+		return 1;
 	}
 
 	std::string connectionType = argv[1];
@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
 	if(connectionType != "tcp" && connectionType != "udp") {
 		std::cerr << "Error:Wrong connection type! Must be tcp/udp!" << std::endl;
 		PrintHelp();
-		return 0;
+		return 1;
 	}
 
 	BaseClient *currentClient = NULL;
